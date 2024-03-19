@@ -1,0 +1,4 @@
+OPENCAGE= (Optional) Opencage is the included as a geocoding service you can access the free trial by making an acccount, a token will be given upon signing up, paste that here
+GEOKEO= (Optional)
+mongodb_pass= paste your mongodb database password here
+mongodb_username= paste your mongodb database username here
