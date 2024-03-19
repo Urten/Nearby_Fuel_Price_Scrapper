@@ -34,6 +34,18 @@ m = MongoDB("api_cache_data")
 @app.post("/prices")
 @limiter.limit("1440/minute")
 def get_prices(prices: GetPrices, request: Request):
+    """    Get prices based on coordinates.
+
+    This function retrieves prices based on the given coordinates. If the prices are found in the database, it returns the prices. If not, it crawls the web to fetch the data and then posts it to the database.
+
+    Args:
+        prices (GetPrices): An object containing latitude and longitude coordinates.
+        request (Request): An object containing the request details.
+
+    Returns:
+        dict: If prices are found in the database, it returns the prices. If not, it returns the crawled data or a message indicating that the data is not available.
+    """
+
     res = m.search_one(
         {'coordinates': [prices.latitude, prices.longitude]})
     if res is not None:

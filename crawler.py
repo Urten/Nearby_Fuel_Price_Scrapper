@@ -22,7 +22,15 @@ driver1 = webdriver.Remote(command_executor=localhost,
 
 
 def crawl(lat: float | int, lon: float | int):
-    """This function will store all the function data"""
+    """    This function will store all the function data.
+
+    Args:
+        lat (float | int): Latitude value.
+        lon (float | int): Longitude value.
+
+    Returns:
+        dict: A dictionary containing data from the 'indian_oil' crawler.
+    """
 
     data = {"indian_oil": crawler_indian_oil(lat=lat, lon=lon, driver=driver1)}
     return data

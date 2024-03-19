@@ -8,10 +8,8 @@ from cache_mongodb import MongoDB
 
 
 def crawler_indian_oil(lat: float | int, lon: float | int, driver: any):
-    '''
-    This function will crawl the indian oil page and get the data
-
-    '''
+    """
+    """
 
     # driver = driver
 
